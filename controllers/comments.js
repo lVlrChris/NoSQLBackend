@@ -27,6 +27,39 @@ module.exports = {
         
         // TODO: bug when user is not registered comment is still created
 
+        // // New comment:
+        // // Find thread
+        // if(req.threadId) {
+        //     Thread.findById(req.threadId).then((result) => {
+        //         //Check to see if commentId was given and valid
+        //         if(req.params.commentId) {
+        //             if (!result.newcomments.id(req.params.commentId)) return res.status(404).send("NewComment not found");
+
+        //             result.newcomments.id(req.params.commentId).newcomments.push({username: req.body.username, content: req.body.content});
+        //             result.save()
+        //                 .then(() => {
+        //                     return res.status(200).send("NewComment saved on subcomment.");
+        //                 })
+        //                 .catch(() => {
+        //                     return res.status(400).send("Something went wrong saving the commment.");
+        //                 })
+        //         } else {
+        //             //No commentId given
+        //             console.log(req.body.username, req.body.content);
+        //             result.newcomments.push({username: req.body.username, content: req.body.content});
+        //             // result.newcomments.create({username: req.body.username, content: req.body.content });
+        //             console.log(result);
+        //             result.save()
+        //                 .then(() => {
+        //                     return res.status(200).send("NewComment saved on thread.");
+        //                 })
+        //                 .catch(() => {
+        //                     return res.status(400).send("Something went wrong saving the commment.");
+        //                 })
+        //         }
+        //     })
+        // }
+
         // Create new Comment
         comment = new Comment({
             username: req.body.username,
