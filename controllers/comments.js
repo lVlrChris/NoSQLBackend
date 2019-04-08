@@ -71,6 +71,7 @@ module.exports = {
 
     delete(req, res) {
         Comment.findById(req.params.commentId).then((result) => {
+            if(!result) res.status(404).send("Comment not found");
             result.delete().then(() => {
                 return res.send(result)
             })
